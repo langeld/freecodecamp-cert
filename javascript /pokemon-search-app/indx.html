@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link style="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <main>
+       <!-- <img class="freecodecamp-logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg" alt="freeCodeCamp Logo">-->
+        <h1 class="title">Pokémon Search App</h1>
+        <div class="container">
+            <form role="search" id="search-form">
+                <label for="search-input" >Search for Pokémon Name or ID:</label>
+                <input type="text" name="pokemon" id="search-input" required></input>
+                <button id="search-button">Search</button>
+            </form>
+            <div class="output">
+                <div class="top-container">
+                    <div class="pokemon-id-and-name">
+                        <span id="pokemon-name"></span>
+                        <span id="pokemon-id"></span>
+                    </div>
+                    <div class="size">
+                        <span id="weight"></span>
+                        <span id="height"></span>
+                    </div>
+                    <div id="sprite-container" class="sprite-container">
+                        <div id="sprite">
+                            <img id="sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" alt="charmander front default sprite">
+                        <div>
+                        <div id="types">
+                            <span class="type fire">Fire</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-container">
+                    <table>
+                        <tr>
+                            <th>Base</th>
+                            <th>Stats</th>
+                        </tr>
+                        <tr>
+                            <th>HP:</th>
+                            <td id="hp">39</td>    
+                        </tr>
+                        <tr>
+                            <th>Attack:</th>
+                            <td id="attack">52</td>    
+                        </tr>
+                         <tr>
+                            <th>Defense:</th>
+                            <td id="defense">43</td>    
+                        </tr>
+                         <tr>
+                            <th>Sp. Attack:</th>
+                            <td id="special-attack">60</td>    
+                        </tr>
+                         <tr>
+                            <th>Sp. Defense:</th>
+                            <td id="special-defense">50</td>    
+                        </tr>
+                         <tr>
+                            <th>Speed:</th>
+                            <td id="speed">65</td>    
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
