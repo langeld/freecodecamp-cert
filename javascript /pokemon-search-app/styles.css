@@ -14,8 +14,29 @@
 }
 
 body {
-  background-color: var(--dark-grey)
+  background-color: var(--dark-grey);
+  display: flex;
+  justify-content: center;
 }
+
+.container {
+  background-color: var(--light-grey);
+  width: 350px;
+}
+
+form{
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  padding: 5px;
+  margin: 10px 0;
+}
+
+
+.top-container {
+
+}
+
 
 .title {
   color: var(--light-grey);
