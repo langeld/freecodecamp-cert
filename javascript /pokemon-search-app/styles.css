@@ -13,32 +13,137 @@
   --white: #fff;
 }
 
-body {
-  background-color: var(--dark-grey);
+body { 
+  height: 100vh;
+  background-color: var(--dark-grey);  
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title{
+  margin: 25px;  
+  color: var(--light-grey);
+  font-size: 2em;
+}
+
+.container {
+  margin: 25px;
+  background-color: var(--light-grey);
+  border: 1px solid var(--light-grey);
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 5px rgba(223, 220, 220, 0.75);
+}
+
+form {
   display: flex;
   justify-content: center;
 }
 
-.container {
-  background-color: var(--light-grey);
-  width: 350px;
-}
-
-form{
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 10px;
-  padding: 5px;
+#search-form{
+  flex-wrap: wrap;
   margin: 10px 0;
+  padding: 5px;
+  border-radius: 8px 8px 0 0;
+  gap: 10px;
 }
 
+label {
+  align-self: center;
+  text-align: center;
+}
+
+#search-input {
+  height: 40px;
+  padding: 10px;
+  width: 200px;
+}
+
+#search-button {
+  height: 40px;
+  padding: 14px;
+  border-radius: 20px;
+  width: 80px;
+  border: none;
+  background-color: #7f21ab;
+  color: var(--light-grey);
+  text-align: center;
+}
+
+.output {
+  margin: 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .top-container {
-
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f0f1f7;
+  width: 100%;
 }
 
-
-.title {
-  color: var(--light-grey);
+.pokemon-id-and-name {
+  height: 28px;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+  text-transform: capitalize;
 }
- 
+
+.sprite-container {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#sprite {
+  width: 180px;  
+}
+
+#types{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;  
+}
+
+.type {
+  width: 66px;
+  padding: 5px;
+  background-color: #ff6f52;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.bottom-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 350px;
+}
+
+table {
+  margin-top: 25px;
+  height: 300px;
+}
+
+tr{
+  background-color: #7f21ab;
+  color: var(--white);
+  border: 1px solid white;
+  height: 20px;
+  text-align: center;
+  gap: 50px
+}
+
