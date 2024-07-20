@@ -23,7 +23,8 @@ const fetchData = async () => {
         const data = await res.json(); 
         showPokemonInfo(data.results);       
     } catch (error) {
-        console.log(err);
+        console.log(error);
+        alert("Pokemon not found");
     }    
 }
 
@@ -41,37 +42,17 @@ const showPokemonInfo = (pokemon) => {
     const input = searchInput.value;
     const pokemonInfo = pokemon.filter((item) => (item.id === parseInt(input) || item.name ===  input.toLowerCase()));
 
-    console.log(pokemonInfo);
-    console.log(pokemonInfo[0].id);
-    console.log(pokemonInfo[0].name);
-
-    /*
-    pokemonInfo.map((item) => {
-        const { id, name, url } = item;
-        
-        if(parseInt(input) =! id || input.toLowerCase() != name){
-            alert("Pokémon not found");
-        } else {
-            pokemonId.textContent = `#${id}`;
-            pokemonName.textContent = name;
-            spriteContainer.innerHTML = `<img id="sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png" alt="${name} front default sprite"> `;
-
-            fetchStats(url);
-        }        
-    });
-    */
-
-    if(pokemonInfo <= 0){
-        alert("Pokémon not found");
-    } else {
+    if(parseInt(input) === pokemonInfo[0].id || input.toLowerCase() === pokemonInfo[0].name){
         pokemonInfo.map((item) => {
             const { id, name, url } = item;
-            pokemonId.textContent = `#${id}`;
-            pokemonName.textContent = name;
-            spriteContainer.innerHTML = `<img id="sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png" alt="${name} front default sprite"> `;
-            
-            fetchStats(url);
-        });
+                pokemonId.textContent = `#${id}`;
+                pokemonName.textContent = name;
+                spriteContainer.innerHTML = `<img id="sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png" alt="${name} front default sprite"> `;
+                    
+                fetchStats(url);
+            });
+    } else {
+        alert("Pokémon not found");
     }
 }
 
