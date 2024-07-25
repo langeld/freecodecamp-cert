@@ -1,5 +1,6 @@
 const cash = document.getElementById("cash");
 const purchaseBtn = document.getElementById("purchase-btn")
+const priceScreen = document.getElementById("price-screen");
 
 let price = 9.99;
 let cid = [
@@ -14,8 +15,14 @@ let cid = [
     ['ONE HUNDRED', 100]
 ];
 
+priceScreen.textContent = `Total: $${price}`;
+
+const calculateCash = () => {
+    
+}
 
 purchaseBtn.addEventListener("click", ()=> {
     console.log(cash.value);
+    console.log(cid[1]);
 })
 
