@@ -65,6 +65,10 @@ h1 {
     border-color: #feac32;
 }
 
+.check-btn-styles:hover {
+    background-color: #FFD35A;
+}
+
 .container  {
     display: flex;
     flex-direction: column;
