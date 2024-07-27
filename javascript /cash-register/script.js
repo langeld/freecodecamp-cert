@@ -5,33 +5,54 @@ const changeDue = document.getElementById("change-due");
 const cashDrawerDisplay = document.getElementById("cash-drawer-display")
 
 let price = 9.99;
-let cid = [
-    ['PENNY', 1.01],
-    ['NICKEL', 2.05],
-    ['DIME', 3.1],
-    ['QUARTER', 4.25],
-    ['ONE', 90],
-    ['FIVE', 55],
-    ['TEN', 20],
-    ['TWENTY', 60],
-    ['ONE HUNDRED', 100]
-];
+// let cid = [
+//     ['PENNY', 1.01],
+//     ['NICKEL', 2.05],
+//     ['DIME', 3.1],
+//     ['QUARTER', 4.25],
+//     ['ONE', 90],
+//     ['FIVE', 55],
+//     ['TEN', 20],
+//     ['TWENTY', 60],
+//     ['ONE HUNDRED', 100]
+// ];
+let cid = {
+    'PENNY': 1.01,
+    'NICKEL': 2.05,
+    'DIME': 3.1,
+    'QUARTER': 4.25,
+    'ONE': 90,
+    'FIVE': 55,
+    'TEN': 20,
+    'TWENTY': 60,
+    'ONE HUNDRED': 100
+}
 
 priceScreen.textContent = `Total: $${price}`;
+
 cashDrawerDisplay.innerHTML = `<p><strong>Change in drawer:</strong></p> 
-                                <p>Pennies: $${cid[0][1]}</p>
-                                <p>Nickels: $${cid[1][1]}</p>
-                                <p>Dimes: $${cid[2][1]}</p>
-                                <p>Quarters: $${cid[3][1]}</p>
-                                <p>Ones: $${cid[4][1]}</p>
-                                <p>Fives: $${cid[5][1]}</p>
-                                <p>Tens: $${cid[6][1]}</p>
-                                <p>Twenties: $${cid[7][1]}</p>
-                                <p>Hundreds: $${cid[8][1]}</p>
+                                <p>Pennies: $${cid.PENNY}</p>
+                                <p>Nickels: $${cid.NICKEL}</p>
+                                <p>Dimes: $${cid.DIME}</p>
+                                <p>Quarters: $${cid.QUARTER}</p>
+                                <p>Ones: $${cid.ONE}</p>
+                                <p>Fives: $${cid.FIVE}</p>
+                                <p>Tens: $${cid.TEN}</p>
+                                <p>Twenties: $${cid.TWENTY}</p>
+                                <p>Hundreds: $${cid["ONE HUNDRED"]}</p>
                                 `;
 
 const calculateCash = () => {
-    return 
+
+    let customerCash = Number(cash.value);
+
+    if(price > cash.value ) {
+        alert("Customer does not have enough money to purchase the item");
+        cash.value = "";
+        return;
+    } else if (price === customerCash) {
+        changeDue.innerHTML = "No change due - customer paid with exact cash";      
+    }
 }
 
 const showChange = () => {
@@ -39,7 +60,12 @@ const showChange = () => {
 }
 
 purchaseBtn.addEventListener("click", ()=> {   
+    console.log(cash.value);
     showChange();
     calculateCash();
 })
+
+
+
+
 
