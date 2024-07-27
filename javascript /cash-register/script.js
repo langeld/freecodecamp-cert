@@ -30,8 +30,8 @@ cashDrawerDisplay.innerHTML = `<p><strong>Change in drawer:</strong></p>
                                 <p>Hundreds: $${cid[8][1]}</p>
                                 `;
 
-const calculateCash = (value) => {
-    
+const calculateCash = () => {
+    return 
 }
 
 const showChange = () => {
@@ -40,5 +40,6 @@ const showChange = () => {
 
 purchaseBtn.addEventListener("click", ()=> {   
     showChange();
+    calculateCash();
 })
 
